@@ -4,6 +4,9 @@
 }
 .container h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 .searchContainer {
   display: flex;
@@ -11,19 +14,17 @@
   flex-direction: column;
 }
 .searchContainer input {
-  width: 250px;
-  height: 40px;
-  font-size: 20px;
+  width: 300px;
+  height: 45px;
+  font-size: 1.1rem;
   margin-bottom: 30px;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: border-color 0.2s;
+  padding: 8px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
 }
 .searchContainer input:focus {
-  border-color: #007bff;
+  border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 .feedbackSearch {
   width: 100%;
@@ -31,23 +32,46 @@
 .listFeedbackSearch {
   list-style: none;
 }
-table {
-  width: 100%;
-}
-table thead {
-  height: 40px;
-}
-table,
-td,
-th {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-tr:nth-child(2n) {
-  background-color: rgba(225, 225, 225, 0.4);
-}
 .tableContainer {
   width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+}
+table thead {
+  background-color: #3498db;
+  color: white;
+}
+table thead th {
+  padding: 15px;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+table thead th:hover {
+  background-color: #2980b9;
+  cursor: pointer;
+}
+table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #2c3e50;
+}
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+table tbody tr:hover {
+  background-color: #f1f4f6;
 }
 @media (max-width: 1250px) {
   .container {
@@ -58,25 +82,35 @@ tr:nth-child(2n) {
   .container {
     max-width: 800px;
   }
+
+  table {
+    font-size: 0.95rem;
+  }
 }
 @media (max-width: 850px) {
   .container {
     max-width: 600px;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  .searchContainer input {
+    width: 250px;
   }
 }
+@media (max-width: 650px) {
+  .tableContainer {
+    overflow-x: auto;
+  }
 
-th {
-  cursor: pointer;
-  user-select: none;
-  padding: 8px;
+  table {
+    min-width: 600px;
+  }
 }
-
-th:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* .loading {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-} */
